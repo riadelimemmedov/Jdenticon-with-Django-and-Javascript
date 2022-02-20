@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Main Page {% endblock title %}
+
+{% block content %}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Identicons  Modal</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="model-jtenticon">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% for user in users %}
+    <svg width="80" height="80" data-jdenticon-value="{{user.username}}" class="jdenticon" style="cursor: pointer;"
+        data-bs-toggle="modal" data-bs-target="#exampleModal">
+    </svg>
+{{user.username}}<br><br><br>
+{% endfor %}
+
+{% endblock content %}
